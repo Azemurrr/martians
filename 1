@@ -1,0 +1,59 @@
+import random
+
+distance = [1, 2, 3, 4, 5, 6, 7]
+total_weight = 713
+
+box_positions = random.sample(distance, k=3)
+
+print("Welcome to the guessing game! Guess the distances for the boxes.")
+print("Enter three distinct numbers between 1 and 7 to make your guess.")
+
+while True:
+    try:
+     
+        num1, num2, num3 = map(int, input("Enter three numbers separated by spaces: ").split())
+
+        if num1 not in distance or num2 not in distance or num3 not in distance:
+            print("Invalid numbers! Please guess numbers between 1 and 7.")
+            continue
+
+        guess = sorted([num1, num2, num3])
+        correct_positions = sorted(box_positions)
+
+        if guess == correct_positions:
+            print(f"Correct! The boxes are in {num1}, {num2}, {num3} kilometers.")
+            break
+        else:
+            print(f"Incorrect. The boxes aren't in {num1}, {num2}, {num3} kilometers. Try again.")
+    
+    except ValueError:
+        print("Invalid input! Please enter three numbers separated by spaces.")import random
+
+distance = [1, 2, 3, 4, 5, 6, 7]
+total_weight = 713
+
+box_positions = random.sample(distance, k=3)
+
+print("Welcome to the guessing game! Guess the distances for the boxes.")
+print("Enter three distinct numbers between 1 and 7 to make your guess.")
+
+while True:
+    try:
+     
+        num1, num2, num3 = map(int, input("Enter three numbers separated by spaces: ").split())
+
+        if num1 not in distance or num2 not in distance or num3 not in distance:
+            print("Invalid numbers! Please guess numbers between 1 and 7.")
+            continue
+
+        guess = sorted([num1, num2, num3])
+        correct_positions = sorted(box_positions)
+
+        if guess == correct_positions:
+            print(f"Correct! The boxes are in {num1}, {num2}, {num3} kilometers.")
+            break
+        else:
+            print(f"Incorrect. The boxes aren't in {num1}, {num2}, {num3} kilometers. Try again.")
+    
+    except ValueError:
+        print("Invalid input! Please enter three numbers separated by spaces.")
